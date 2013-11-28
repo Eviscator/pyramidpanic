@@ -17,9 +17,11 @@ namespace PyramidPanic
         //Fields
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        private KeyboardState ks, oks;
 
         public PyramidPanic()
         {
+            this.IsMouseVisible = true;
             this.graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -54,9 +56,14 @@ namespace PyramidPanic
 
         protected override void Update(GameTime gameTime)
         {
+            this.ks = Keyboard.GetState();
+            if (this.ks.IsKeyDown(Keys.Escape))
+            {
+                this.Exit();
+            }
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
 
             base.Update(gameTime);
         }
