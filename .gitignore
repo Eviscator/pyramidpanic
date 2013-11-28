@@ -1,0 +1,6 @@
+#Dit is een file waarin bestandstypen
+#of hele mappen kunt laten negeren.
+#met een '#' kun je commentaar/uitleg typen.
+
+**/bin/**
+**/obj/**
