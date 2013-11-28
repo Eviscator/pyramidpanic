@@ -14,24 +14,36 @@ namespace PyramidPanic
 
     public class PyramidPanic : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        //Fields
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
         public PyramidPanic()
         {
-            graphics = new GraphicsDeviceManager(this);
+            this.graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
+            //Hier wordt de schermtitel gekozen.
+            this.Window.Title = "Pyramid Panic";
+
+            //Hier wordt de breedte van het canvas gedefineerd.
+            this.graphics.PreferredBackBufferWidth = 640;
+
+            //Hier wordt de hoogte van het canvas gedefineerd.
+            this.graphics.PreferredBackBufferHeight = 480;
+
+            //Hier wordt de verandering van het canvas toegepast.
+            this.graphics.ApplyChanges();
 
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.spriteBatch = new SpriteBatch(GraphicsDevice);
 
         }
 
