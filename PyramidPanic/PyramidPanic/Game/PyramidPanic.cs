@@ -21,7 +21,9 @@ namespace PyramidPanic
 
         public PyramidPanic()
         {
+            //maakt de muis zichtbaar 
             this.IsMouseVisible = true;
+
             this.graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -57,11 +59,12 @@ namespace PyramidPanic
         protected override void Update(GameTime gameTime)
         {
             this.ks = Keyboard.GetState();
+            //het indrukken van 'Escape' sluit het spel
             if (this.ks.IsKeyDown(Keys.Escape))
             {
                 this.Exit();
             }
-
+            //Dit zorgt ervoor dat het spel gesloten kan worden met de 'Back' knop van een gamepad.
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
